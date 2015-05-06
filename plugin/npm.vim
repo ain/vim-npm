@@ -1,3 +1,8 @@
+if (exists('g:loaded_npm') && g:loaded_npm) || v:version < 700 || &cp
+  finish
+endif
+let g:loaded_npm = 1
+
 function! s:Npm(bang, args)
   let cmd = 'npm ' . a:args
   execute ':!' . cmd
